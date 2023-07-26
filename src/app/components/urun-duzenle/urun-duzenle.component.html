@@ -1,0 +1,56 @@
+<div class="container">
+
+    <h2 class="marginTopNBottom">Film Düzenle</h2>
+  
+    <div class="row">
+      <div class="col-6">
+  
+        <form #form="ngForm" (ngSubmit)="updateProductMethod()">
+
+          <div class="mb-3">
+  
+            <label for="id" class="form-label">Film Id</label>
+            <input type="text" class="form-control bg-light" id="id" name="id" readonly
+            [(ngModel)] = "updateProduct.id">
+  
+          </div>
+
+          <div class="mb-3">
+  
+            <label for="name" class="form-label">Film Adı</label>
+            <input type="text" class="form-control" id="name" name="name"
+            [(ngModel)] = "updateProduct.name">
+  
+          </div>
+  
+          <div class="mb-3">
+  
+            <label for="category" class="form-label">Açıklama</label>
+            <input type="text" class="form-control" id="category" name="category"
+            [(ngModel)] = "updateProduct.category">
+  
+          </div>
+  
+          <div class="mb-3">
+  
+            <label for="productId" class="form-label">Film afişi resim adresi</label>
+            <input type="text" class="form-control" id="productId" name="productId"
+            [(ngModel)] = "updateProduct.urunId">
+  
+          </div>
+  
+          <div class="mb-3">
+  
+            <label for="price" class="form-label">Puanlama</label>
+            <input type="number" class="form-control" id="price" name="price"
+            [(ngModel)] = "updateProduct.price">
+  
+          </div>
+  
+          <button type="submit" class="btn btn-primary">Güncelle</button>
+        </form>
+  
+      </div>
+    </div>
+  </div>
+  

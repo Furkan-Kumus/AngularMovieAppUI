@@ -1,0 +1,46 @@
+<div class="container">
+
+  <h2 class="marginTopNBottom">Film Ekle</h2>
+
+  <div class="row">
+    <div class="col-6">
+
+      <form #form="ngForm" (ngSubmit)="addProduct()">
+        <div class="mb-3">
+
+          <label for="name" class="form-label">Filmin Adı</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="Filmin adını giriniz" 
+          [(ngModel)] = "newUrun.name">
+
+        </div>
+
+        <div class="mb-3">
+
+          <label for="category" class="form-label">Açıklama</label>
+          <input type="text" class="form-control" id="category" name="category" placeholder="Film açıklaması"
+          [(ngModel)] = "newUrun.category">
+
+        </div>
+
+        <div class="mb-3">
+
+          <label for="productId" class="form-label">Film afişi resim adresi</label>
+          <input type="text" class="form-control" id="productId" name="productId" placeholder="Resim Url'ini giriniz"
+          [(ngModel)] = "newUrun.urunId">
+
+        </div>
+
+        <div class="mb-3">
+
+          <label for="price" class="form-label">Puanlama</label>
+          <input type="number" class="form-control" id="price" name="price"
+          [(ngModel)] = "newUrun.price">
+
+        </div>
+
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+      </form>
+
+    </div>
+  </div>
+</div>

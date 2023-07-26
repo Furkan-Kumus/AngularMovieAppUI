@@ -1,0 +1,71 @@
+<!-- <div class="container">
+  <h1>Urunler</h1>
+
+  <table class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Adı</th>
+        <th scope="col">Kategori</th>
+        <th scope="col">Ürün Kodu</th>
+        <th scope="col">Fiyat</th>
+        <th colspan="2" class="center">İşlemler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let urun of urunler">
+        <th scope="row">{{urun.id}}</th>
+        <td>{{urun.name}}</td>
+        <td>{{urun.category}}</td>
+        <td>{{urun.urunId}}</td>
+        <td>{{urun.price | currency: '₺'}}</td>
+        <td><a [routerLink]="['/urunler','duzenle',urun.id]">Düzenle</a></td>
+        <td><a [routerLink]="[]" (click)="deleteProduct(urun.id)">Sil</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+  <p *ngIf="!urunler || urunler.length == 0" class="text-white bg-black">Kayıtlı Ürün Bulunamadı..</p>
+
+</div> -->
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<div class="container center centerAll" style=" width: 37rem;">
+  <h1>~Filmler~</h1>
+
+  <div class="form-group marginBottom">
+     <input class="form-control me-2" id="name" placeholder="Aradığınız film.."
+        [(ngModel)]="filterText" >
+  </div>
+
+  
+  <div class="card mb-3 col-md-12" style="max-width: 600px;" *ngFor="let urun of urunler | urunFilter: filterText">
+
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img routerLink="/detail/{{urun.id}}" src="{{urun.urunId}}" class="img-fluid rounded-start">
+      </div>
+
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title" routerLink="/detail/{{urun.id}}">{{urun.name}}</h5>
+          <p class="card-text" routerLink="/detail/{{urun.id}}">{{urun.category}}</p>
+          <a routerLink="/detail/{{urun.id}}" routerLinkActive="router-link-active" class="btn btn-danger">Film
+            Detayları</a>
+
+          <p class="card-text"><small class="text-body-secondary">-------------------------------</small></p>
+
+          <button [routerLink]="['/urunler','duzenle',urun.id]" style="font-size:12px" class="btnUpdate">Güncelle <i class="fa fa-pencil"></i></button>
+          <button [routerLink]="[]" (click)="deleteProduct(urun.id)" style="font-size:12px">Sil <i class="fa fa-trash-o"></i></button>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
